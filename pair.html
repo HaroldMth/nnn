@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <link rel="shortcut icon" type="image/x-icon" href="./img/PARKY-MD.jpg">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/hans-xmd.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Associer votre numéro</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -13,11 +13,9 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-image: url("https://telegra.ph/file/9de0ab729f967730abbdd.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top left, #2a2a2a, #000000);
+      font-family: 'Roboto', sans-serif;
+      color: #e1e1e1;
     }
 
     .container {
@@ -25,62 +23,144 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      width: 100%;
+      max-width: 450px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(0, 255, 204, 0.1), rgba(255, 0, 204, 0.1));
+      opacity: 0.3;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .box {
-      width: 350px;
+      width: 100%;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 15px;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     #text {
-      color: #333;
+      color: #e0e0e0;
+      margin: 0;
+    }
+
+    h3 {
+      margin: 10px 0;
+      font-size: 1.5rem;
+      text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+    }
+
+    h6 {
+      margin: 0;
+      font-size: 1rem;
+      color: #aaa;
     }
 
     .input-container {
       display: flex;
-      background: linear-gradient(45deg, #f1f1f1 0%, #ffffff 100%);
-      box-shadow: 20px 20px 20px #d0d0d0, -10px -10px 20px #f5f5f5;
-      border-radius: 1rem;
+      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.5), inset 0 0 15px rgba(255, 0, 204, 0.5);
+      border-radius: 15px;
       padding: 0.3rem;
-      max-width: 100%;
       width: 100%;
-      margin: 0 auto;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .input-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(0, 255, 204, 0.2);
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.5;
     }
 
     .input-container input {
-      border-radius: 0.8rem 0 0 0.8rem;
-      background: #eaeaea;
-      box-shadow: inset 13px 13px 10px #dcdcdc, inset -13px -13px 10px #f4f4f4;
+      border-radius: 15px 0 0 15px;
+      background: #333;
+      box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.5), inset -5px -5px 15px rgba(0, 0, 0, 0.3);
       width: 80%;
       padding: 1rem;
       border: none;
-      color: #333;
-      transition: all 0.2s ease-in-out;
+      color: #e0e0e0;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .input-container input::placeholder {
+      color: #888;
     }
 
     .input-container input:focus {
       outline: none;
-      box-shadow: inset 13px 13px 10px #a0a0a0, inset -13px -13px 10px #f4f4f4;
+      box-shadow: inset 5px 5px 15px rgba(0, 255, 204, 0.7), inset -5px -5px 15px rgba(255, 0, 204, 0.5);
     }
 
     .input-container button {
       flex-basis: 20%;
       padding: 1rem;
-      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
       font-weight: bold;
       text-transform: uppercase;
-      color: white;
+      color: #fff;
       border: none;
-      border-radius: 0 1rem 1rem 0;
-      transition: all 0.2s ease-in-out;
+      border-radius: 0 15px 15px 0;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
     .input-container button:hover {
       background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+    }
+
+    #waiting-message {
+      color: #ff9f00;
+      margin-top: 10px;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255, 159, 0, 0.8);
+    }
+
+    #pair {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+
+    #copy {
+      color: #ff0033;
+      font-weight: bold;
+      cursor: pointer;
+      text-shadow: 0 0 5px rgba(255, 0, 204, 0.8);
+    }
+
+    #copy:hover {
+      color: #ff6f61;
     }
 
     @media (max-width: 500px) {
@@ -89,12 +169,12 @@
       }
 
       .input-container input {
-        border-radius: 0.8rem;
+        border-radius: 15px;
         width: 100%;
       }
 
       .input-container button {
-        border-radius: 0.8rem;
+        border-radius: 15px;
         width: 100%;
         margin-top: 0.5rem;
       }
@@ -106,10 +186,10 @@
     <div class="box">
       <div id="text">
         <i class="fa fa-phone-alt"></i>
-        <h3>Associez votre numéro</h3>
-        <h6>Entrez votre numéro avec l'indicatif du pays.</h6>
+        <h3>PAIR CODE BY HANS TECH ✨</h3>
+        <h6>TYPE IN YOUR NUMBER WITH COUNTRY CODE.</h6>
         <div class="input-container">
-          <input type="text" id="number" placeholder="Entrez votre numéro avec l'indicatif du pays">
+          <input type="text" id="number" placeholder="237696XXXXXXX.">
           <button id="submit">Envoyer</button>
         </div>
         <a id="waiting-message" style="display: none;">En cours...</a>
@@ -128,9 +208,9 @@
       const number = numberInput.value.replace(/[^0-9]/g, "");
 
       if (!number) {
-        pairElement.innerHTML = '<span style="color:black;font-weight:bold">Veuillez entrer votre numéro WhatsApp avec l’indicatif du pays.</span>';
+        pairElement.innerHTML = '<span style="color:white;font-weight:bold">Veuillez entrer votre numéro WhatsApp avec l’indicatif du pays.</span>';
       } else if (number.length < 10) {
-        pairElement.innerHTML = '<span style="color:black;font-weight:bold">Format de numéro invalide</span>';
+        pairElement.innerHTML = '<span style="color:white;font-weight:bold">Format de numéro invalide</span>';
       } else {
         const formattedNumber = formatNumber(number);
         numberInput.value = "+" + formattedNumber;
@@ -140,9 +220,9 @@
         try {
           const { data } = await axios(`/code?number=${number}`);
           const code = data.code || "Service indisponible";
-          pairElement.innerHTML = `<span id="copy" onclick="copyToClipboard('${code}')" style="color:red;font-weight:bold">CODE : <span style="color:black;font-weight:bold">${code}</span></span>`;
+          pairElement.innerHTML = `<span id="copy" onclick="copyToClipboard('${code}')" style="color:red;font-weight:bold">CODE : <span style="color:white;font-weight:bold">${code}</span></span>`;
         } catch (error) {
-          pairElement.innerHTML = '<span style="color:black;font-weight:bold">Erreur lors de la récupération du code. Veuillez réessayer.</span>';
+          pairElement.innerHTML = '<span style="color:white;font-weight:bold">Erreur lors de la récupération du code. Veuillez réessayer.</span>';
         } finally {
           waitingMessage.style.display = 'none';
         }
