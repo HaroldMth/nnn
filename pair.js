@@ -59,10 +59,10 @@ router.get('/', async (req, res) => {
             if (phoneNumber) {
                 phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
                 if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-                    return res.status(400).send("Commencez par le code du pays de votre numéro WhatsApp, exemple : +22898133388");
+                    return res.status(400).send("Please start with your contry code  , exemple : +237696900612");
                 }
             } else {
-                phoneNumber = await question(chalk.bgBlack(chalk.greenBright("Veuillez saisir votre numéro WhatsApp 🩵\nPar exemple : +22898133388 : ")));
+                phoneNumber = await question(chalk.bgBlack(chalk.greenBright("ENTER YOUR PHONE NUMBER WITH CONNTRY CODE🩵\n EXAMPLE : +237696900612 : ")));
                 phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
 
                 if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
