@@ -85,8 +85,8 @@ router.get('/', async (req, res) => {
                 await delay(10000);
                 await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `╭═ *HANS V2 CONNECTED* 🎉══⊷
 ┃❃╭──────────────
-┃❃│ THANKS FOR CHOOSING *HANS XMD*
-┃❃│ *GITHUB* : https://github.com/haroldmth/hans-xmd
+┃❃│ THANKS FOR CHOOSING *HANS V2*
+┃❃│ *GITHUB* : https://github.com/haroldmth
 ┃❃│ *CHANNEL LINK* : https://www.whatsapp.com/channel/0029VaZDIdxDTkKB4JSWUk1O
 ┃❃│ *SUPPORT GROUP* : https://chat.whatsapp.com/DIDPLFc7DMSE8OysoRPfdu
 ┃❃│ *TELEGRAM CHANNEL* : https://t.me/HansTech0
