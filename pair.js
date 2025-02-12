@@ -83,9 +83,9 @@ router.get('/', async (req, res) => {
             const { connection, lastDisconnect } = s;
             if (connection === "open") {
                 await delay(10000);
-                await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `╭═ *HANS V2 CONNECTED* 🎉══⊷
+                await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `╭═ *HANS BYTECONNECTED* 🎉══⊷
 ┃❃╭──────────────
-┃❃│ THANKS FOR CHOOSING *HANS V2*
+┃❃│ THANKS FOR CHOOSING *HANS BYTE*
 ┃❃│ *GITHUB* : https://github.com/haroldmth
 ┃❃│ *CHANNEL LINK* : https://www.whatsapp.com/channel/0029VaZDIdxDTkKB4JSWUk1O
 ┃❃│ *SUPPORT GROUP* : https://chat.whatsapp.com/DIDPLFc7DMSE8OysoRPfdu
